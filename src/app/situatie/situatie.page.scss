@@ -1,0 +1,127 @@
+// /* Stilizarea tabelului */
+// .custom-datatable {
+//   max-width: 100%; /* sau orice altă valoare pe care dorești să o setezi */
+//   // margin: auto; /* centrat în container */
+// }
+
+// /* Stilizarea coloanelor */
+// .ngx-datatable .datatable-body-cell {
+
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+//   box-sizing: border-box;
+// }
+// .custom-datatable .datatable-header {
+//   background-color: #ccc; /* Culoarea gri a fundalului pentru antetul tabelului */
+//   border: 1px solid #000; /* O margine neagră în jurul antetului tabelului */
+// }
+// /* Stilizare pentru capul de tabel */
+// ngx-datatable .datatable-header {
+//   background-color: #ccc !important; /* Culoarea fundalului */
+//   border: 1px solid #aa9e9e !important; /* Bordura neagră */
+//   // padding: 8px !important; /* Padding pentru spațiu în interiorul capului de tabel */
+// }
+// ::ng-deep .ngx-datatable-header {
+//   background-color: gray; /* Setați culoarea de fundal dorită */
+//   border: 1px solid rgb(210, 201, 201); /* Adăugați o bordură */
+//   /* Alte stiluri aici */
+// }
+// ngx-datatable .datatable-header {
+//   background-color: #007bff; /* Înlocuiți cu codul hex al culorii dorite */
+//   border-bottom: 0.3px solid #ccc; /* O linie subțire pentru partea de jos a antetului */
+// }
+
+// ngx-datatable .datatable-row-wrapper {
+//   border-bottom: 0.3px solid #ccc; /* Adaugă o linie subțire între rânduri */
+// }
+
+// @media only screen and (min-device-width : 428px) and (max-device-width : 926px) {
+//   .custom-datatable {
+//       max-width: 100%;
+//       /* alte stiluri, dacă sunt necesare */
+//   }
+// }
+// ion-datetime {
+//   max-width: 100%;
+//   box-sizing: border-box;
+// }
+
+// .segment-header {
+//   margin-top: constant(safe-area-inset-top); /* iOS */
+//   margin-top: env(safe-area-inset-top); /* iOS 15+ */
+// }
+
+// .full-width-table {
+//   width: 100%;
+// }
+
+// .low-stock {
+//   background-color: rgb(179, 13, 38); /* Culorile pentru evidențierea reperele sub limită */
+//   font-weight: bold; /* Poți utiliza și alte stiluri pentru evidențiere */
+// }
+// /* Stiluri pentru alinierea textului în mijlocul celulelor */
+// .full-width-table {
+//   width: 100%;
+//   text-align: center; /* Aliniere orizontală în mijloc */
+// }
+
+// .full-width-table th,
+// .full-width-table td {
+//   vertical-align: middle; /* Aliniere verticală în mijloc */
+// }
+// /* Stiluri pentru borduri cu grosime de 0.3px */
+// .full-width-table {
+//   width: 100%;
+//   text-align: center;
+//   border-collapse: collapse; /* Pentru a îndepărta spațiile între celule */
+// }
+
+// .full-width-table th,
+// .full-width-table td {
+//   vertical-align: middle;
+//   border: 0.3px solid #ccc; /* Borduri de 0.3px cu culoarea gri */
+//   padding: 8px; /* Spațiere între conținut și bordură */
+// }
+// /* Stiluri pentru capul de tabel (header) */
+// .full-width-table {
+//   width: 100%;
+//   text-align: center;
+//   border-collapse: collapse; /* Pentru a îndepărta spațiile între celule */
+// }
+
+// .full-width-table th {
+//   vertical-align: middle;
+//   border: 0.3px solid #ccc; /* Borduri de 0.3px cu culoarea gri */
+//   padding: 8px; /* Spațiere între conținut și bordură */
+//   background-color: #242467; /* Culoare de fundal gri deschis pentru header */
+//   color: #bcaeae; /* Culoare text pentru header */
+// }
+
+/* Stilizare pentru tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+/* Stilizare pentru antetele de tabel */
+thead th {
+  background-color: #302a2a;
+  border: 0.3px solid #ccc;
+  padding: 4px;
+  text-align: center;
+}
+
+/* Stilizare pentru celulele de tabel */
+tbody td {
+  border: 0.3px solid #ccc;
+  padding: 4px;
+
+  text-align: center; /* Aliniere text în mijloc */
+
+}
+
+/* Stilizare pentru rânduri alternative */
+tbody tr:nth-child(even) {
+  background-color: #190e0e;
+}

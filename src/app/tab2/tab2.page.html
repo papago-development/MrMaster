@@ -1,0 +1,22 @@
+<!-- puncte-de-lucru.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Puncte de Lucru
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let punct of puncteDeLucru" (click)="openPunctDeLucruDetails(punct)">
+    <img [src]="punct.urlImg"/>
+    <ion-card-header>
+      <ion-card-title>{{ punct.numepunctdelucru }}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <div *ngIf="errorMNessage" class="error-message">
+    {{ errorMNessage }}
+
+  </div>
+  <!-- <ion-button (click)="redirectToLogin()"   style="margin-top: 20px;"  expand="full" color="primary">Login</ion-button> -->
+</ion-content>

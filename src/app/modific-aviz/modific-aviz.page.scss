@@ -1,0 +1,20 @@
+/* in aviz-view.page.scss */
+/* in aviz-view.page.scss */
+.compact-item {
+  --inner-padding-start: 0;
+  --inner-padding-end: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  display: flex;
+  align-items: center; /* Centers the label vertically */
+}
+
+.compact-label {
+  margin-right: 0.5rem; /* Adjust the right margin as needed */
+  white-space: nowrap; /* Ensure the label doesn't wrap */
+}
+
+.compact-input {
+  // flex-grow: 1; /* Allow the input to take up remaining space */
+  padding-left: 8px;
+}

@@ -1,0 +1,232 @@
+.custom-button-action {
+  width: 100%;
+  height: 20px;
+  background-color: brown;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  // justify-content: center;
+  text-align: right;
+  margin-right: 0;
+  margin-top:  20px;
+
+}
+
+.custom-datetime{
+  width: 100%;
+  height: 40px;
+}
+/* Stil pentru elementele ion-datetime */
+// ::ng-deep ion-datetime {
+//   height: 30px; /* Ajustează înălțimea elementului la nevoie */
+//   /* Poți specifica înălțimea dorită, de exemplu, height: 30px; */
+// }
+/* Stil pentru elementele ion-datetime cu clasă custom-datetime */
+.custom-datetime ion-datetime {
+  height: 70px; /* Ajustează înălțimea elementului la nevoie */
+  /* Poți specifica înălțimea dorită, de exemplu, height: 30px; */
+}
+
+ion-button {
+  --background: transparent !important;
+  --background-activated: transparent !important;
+  --box-shadow: none !important;
+}
+.ion-content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Spațiere între rânduri */
+}
+
+.custom-button {
+  width: 200px;
+  height: 200px;
+  margin: 10px; /* Spațiere între butoane */
+  font-size: 16px; /* Dimensiunea textului */
+}
+
+/* Add borders between rows */
+::ng-deep .ngx-datatable.material .datatable-row,
+::ng-deep .ngx-datatable.material .datatable-body-row {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Add borders between columns */
+::ng-deep .ngx-datatable.material .datatable-body-cell,
+::ng-deep .ngx-datatable.material .datatable-header-cell {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Style the header row with a yellow background */
+::ng-deep .ngx-datatable.material .datatable-header {
+  background-color: rgb(3, 69, 126);
+  border-bottom: 1px solid #ccc;
+}
+
+/* Remove background color for the last header cell */
+::ng-deep .ngx-datatable.material .datatable-header-cell:last-child {
+  background-color: inherit;
+
+}
+
+/* Add spacing between ion-item and ngx-datatable */
+ion-item {
+  margin-bottom: 1px; /* Adjust the margin as needed */
+}
+
+
+/* Add borders between rows */
+::ng-deep .ngx-datatable.material .datatable-row,
+::ng-deep .ngx-datatable.material .datatable-body-row {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Add borders between columns */
+::ng-deep .ngx-datatable.material .datatable-body-cell,
+::ng-deep .ngx-datatable.material .datatable-header-cell {
+  border-right: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Style the header row with a yellow background */
+::ng-deep .ngx-datatable.material .datatable-header {
+  background-color: rgb(3, 69, 126);
+  border-bottom: 1px solid #ccc;
+}
+
+/* Remove background color for the last header cell */
+::ng-deep .ngx-datatable.material .datatable-header-cell:last-child {
+  background-color: inherit;
+}
+
+::ng-deep .ngx-datatable.material {
+  display: flex;
+  align-items: center;
+
+}
+
+.center-content {
+  display: flex;
+  justify-content: left; /* centrat orizontal */
+  align-items: left;     /* centrat vertical */
+  height: 100%;            /* ocupă întreaga înălțime a părintelui său */
+}
+
+ion-col {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* Elimină spațiile dintre celulele tabelului */
+}
+
+th, td {
+  border: 0.5px solid #ccc; /* Adaugă un contur în jurul celulelor */
+  // padding: 3px; /* Spațiere internă pentru celule */
+  text-align: center; /* Alinează textul în centru */
+}
+th{
+
+  background-color: rgb(3, 69, 126);
+}
+
+thead {
+  background-color: #333; /* Culoarea antetului tabelului */
+  color: #fff; /* Culoarea textului din antet */
+}
+
+.custom-col {
+
+ /* Aliniaza conținutul la dreapta */
+}
+.button-small {
+  width: 100px; /* Definiți lățimea dorită */
+  height: 30px; /* Definiți înălțimea dorită */
+  font-size: 12px; /* Ajustați mărimea fontului pentru text */
+  padding: 5px 10px; /* Ajustați spațierea interioară pentru conținut */
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.flex-container {
+  display: flex;
+  justify-content: center; /* Alinează orizontal pe centru */
+  align-items: center; /* Alinează vertical pe centru, dacă este necesar */
+  height: 100%; /* Asigurați-vă că containerul ocupă întreaga înălțime a coloanei */
+}
+
+
+.no-gap-grid {
+  --ion-grid-padding: 0;
+  --ion-grid-column-padding: 0;
+}
+
+.table thead th {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+
+/* Stilurile pentru butonul "Next" */
+::ng-deep .custom-pagination-controls .pagination-next a {
+  background-color: blue;
+  color: white;
+}
+
+/* Stilurile pentru butonul "Prev" */
+::ng-deep .custom-pagination-controls .pagination-previous a {
+  background-color: blue;
+  color: white;
+}
+/* Stilurile pentru cifrele paginării */
+
+
+/* Stilurile pentru cifrele paginării */
+::ng-deep .ngx-pagination li a {
+  background-color: rgb(22, 21, 21) !important;
+  color: white !important;
+}
+
+/* Stilurile pentru cifrele paginării atunci când sunt active */
+::ng-deep .ngx-pagination li.active a {
+  background-color: black !important;
+  color: black !important;
+}
+.custom-pagination-controls {
+  position: sticky;
+  bottom: 0; /* Poziționați controlul în partea de jos a ecranului */
+  background-color: white; /* Adăugați o culoare de fundal pentru vizibilitate */
+  z-index: 100; /* Specificați un z-index pentru a controla suprapunerea cu alte elemente */
+}
+
+ion-datetime {
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

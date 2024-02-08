@@ -1,0 +1,160 @@
+ion-content {
+
+}
+
+
+
+.custom-grid {
+  --ion-grid-padding: 0;
+  --ion-grid-column-padding: 0;
+}
+
+.custom-col {
+  padding: 4px; /* ajustează după preferințe pentru spațierea dintre coloane */
+}
+
+.custom-button {
+  --padding: 0;
+  --background: transparent; /* Elimina fundalul implicit al butonului, dacă este necesar */
+  --border-width: 0; /* Elimina marginea/bordura implicită */
+  --border-radius: 10px; /* Setează colțurile rotunjite pentru buton */
+  --box-shadow: none; /* El
+  width: 100%; /* folosește procent pentru a fi responsive */
+  height: auto; /* sau un înălțime specifică dacă este necesar */
+  min-height: 50px; /* asigură că butonul nu este prea mic */
+
+}
+
+
+.custom-button-action {
+  margin-top: 20px; /* spațiere de sus */
+  margin-left: auto; /* centrat pe orizontală */
+  margin-right: auto; /* centrat pe orizontală */
+  width: 90%; /* lățimea butonului de acțiune */
+
+}
+
+.table {
+  width: 100%; /* asigură că tabelul folosește întreaga lățime disponibilă */
+  font-size: 0.8em; /* ajustează dimensiunea fontului pentru mobil */
+  border: 0.2px;
+  border-color: antiquewhite;
+}
+
+.btn {
+  --padding: 0;
+  height: auto;
+  min-height: 30px; /* asigură că butonul nu este prea mic */
+}
+
+.icon-name {
+  text-align: center;
+  font-size: 0.7em; /* ajustează dimensiunea textului pentru numele iconiței */
+}
+/* În fișierul de stiluri CSS al paginii (ex: your-page.scss) */
+
+/* Suprascrie stilul implicit al butoanelor Ionic */
+ion-button {
+  --background: transparent; /* Elimina fundalul implicit al butonului */
+  --border-width: 0; /* Elimina marginea/bordura implicită */
+  --border-radius: 0; /* Opțional, pentru a elimina rotunjirea colțurilor */
+  --box-shadow: none; /* Elimina umbra implicită */
+  --padding-start: 0; /* Elimina padding-ul de la început */
+  --padding-end: 0; /* Elimina padding-ul de la sfârșit */
+  --padding-top: 0; /* Elimina padding-ul de sus */
+  --padding-bottom: 0; /* Elimina padding-ul de jos */
+  --ripple-color: transparent; /* Elimina efectul de ripple la click */
+}
+
+/* Ajustează imaginea din interiorul butonului */
+ion-button ion-img {
+  width: 100%; /* Lărgește imaginea să ocupe tot butonul */
+  height: auto; /* Menține aspectul proporțional al imaginii */
+  max-height: 100%; /* Asigură că imaginea nu depășește butonul */
+}
+
+/* Ajustează dimensiunea și poziționarea textului sub imagine, dacă este necesar */
+.custom-button .icon-name {
+  font-size: smaller; /* Micsorează dimensiunea fontului */
+  padding-top: 5px; /* Adaugă un spațiu între imagine și text */
+}
+ion-content {
+
+}
+
+
+
+.custom-grid {
+  --ion-grid-padding: 0;
+  --ion-grid-column-padding: 0;
+}
+
+.custom-col {
+  padding: 4px; /* ajustează după preferințe pentru spațierea dintre coloane */
+}
+
+.custom-button {
+  --padding: 0;
+  --background: transparent; /* Elimina fundalul implicit al butonului, dacă este necesar */
+  --border-width: 0; /* Elimina marginea/bordura implicită */
+  --border-radius: 10px; /* Setează colțurile rotunjite pentru buton */
+  --box-shadow: none; /* El
+  width: 100%; /* folosește procent pentru a fi responsive */
+  height: auto; /* sau un înălțime specifică dacă este necesar */
+  min-height: 50px; /* asigură că butonul nu este prea mic */
+
+}
+
+
+.custom-button-action {
+  margin-top: 20px; /* spațiere de sus */
+  margin-left: auto; /* centrat pe orizontală */
+  margin-right: auto; /* centrat pe orizontală */
+  width: 90%; /* lățimea butonului de acțiune */
+
+}
+
+.table {
+  width: 100%; /* asigură că tabelul folosește întreaga lățime disponibilă */
+  font-size: 0.8em; /* ajustează dimensiunea fontului pentru mobil */
+  border: 0.2px;
+  border-color: antiquewhite;
+}
+
+.btn {
+  --padding: 0;
+  height: auto;
+  min-height: 30px; /* asigură că butonul nu este prea mic */
+}
+
+.icon-name {
+  text-align: center;
+  font-size: 0.7em; /* ajustează dimensiunea textului pentru numele iconiței */
+}
+/* În fișierul de stiluri CSS al paginii (ex: your-page.scss) */
+
+/* Suprascrie stilul implicit al butoanelor Ionic */
+ion-button {
+  --background: transparent; /* Elimina fundalul implicit al butonului */
+  --border-width: 0; /* Elimina marginea/bordura implicită */
+  --border-radius: 0; /* Opțional, pentru a elimina rotunjirea colțurilor */
+  --box-shadow: none; /* Elimina umbra implicită */
+  --padding-start: 0; /* Elimina padding-ul de la început */
+  --padding-end: 0; /* Elimina padding-ul de la sfârșit */
+  --padding-top: 0; /* Elimina padding-ul de sus */
+  --padding-bottom: 0; /* Elimina padding-ul de jos */
+  --ripple-color: transparent; /* Elimina efectul de ripple la click */
+}
+
+/* Ajustează imaginea din interiorul butonului */
+ion-button ion-img {
+  width: 100%; /* Lărgește imaginea să ocupe tot butonul */
+  height: auto; /* Menține aspectul proporțional al imaginii */
+  max-height: 100%; /* Asigură că imaginea nu depășește butonul */
+}
+
+/* Ajustează dimensiunea și poziționarea textului sub imagine, dacă este necesar */
+.custom-button .icon-name {
+  font-size: smaller; /* Micsorează dimensiunea fontului */
+  padding-top: 5px; /* Adaugă un spațiu între imagine și text */
+}

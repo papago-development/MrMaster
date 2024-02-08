@@ -1,0 +1,91 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/'" (click)="onBackClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Avize</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid style="margin-top: 10px; " class="no-gap-grid">
+    <ion-row>
+      <ion-col size="12" >
+          <!-- <ion-label>Data</ion-label> -->
+          <ion-datetime presentation="date" class="custom-datetime"
+            style="background-color: rgb(38, 43, 89);"
+            display-format="DD/MM/YYYY"
+            [(ngModel)]="startDate"
+            (ngModelChange)="onDateStartChange()"
+           >
+        </ion-datetime>
+     </ion-col>
+     </ion-row>
+     <ion-row>
+      <ion-col size="12" style="margin-top: 10px;"   class="custom-col">
+        <ion-datetime presentation="date"
+          style="background-color: rgb(38, 43, 89); "
+          display-format="DD/MM/YYYY"
+          [(ngModel)]="endDate"
+          (ngModelChange)="onDateEndChange()">
+       </ion-datetime>
+
+       <ion-button [disabled]="!isActive" class="custom-button-action " (click)="afiseazaAvize()">Vezi</ion-button>
+   </ion-col>
+
+   </ion-row>
+   <ion-row  style="margin-top: 10px;">
+    <ion-col class="flex-container">
+    <p *ngIf="startDate && endDate">Avizele între         <strong>{{ startDate | date: 'dd-MM-yyyy'}} </strong>și <strong>{{ endDate | date: 'dd-MM-yyyy'}}</strong></p>
+    </ion-col>
+   </ion-row>
+
+    <ion-row>
+      <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="searchItems()" placeholder ="Cauta dupa numarul avizului"></ion-searchbar>
+    </ion-row>
+    <ion-row  *ngIf="data.length>0"   style="margin-top: 20px;">
+      <ion-col size="12">
+        <table class="table" >
+          <thead style="height: 20px;">
+            <tr>
+              <th>Data</th>
+              <th>Serie</th>
+              <th>Numar</th>
+              <th>Actiune</th>
+              <!-- Adăugați mai multe coloane după nevoie -->
+            </tr>
+          </thead>
+        <tbody>
+          <ng-container *ngFor="let  item of   data | paginate : {
+
+            itemsPerPage : itemsPerPage,
+            currentPage: currentPage,
+            totalItems: pagedData.length
+          };" >
+          <tr>
+            <td>{{ item.dataIntrariiView}}</td>
+            <td>{{ item.documentSerie }}</td>
+            <td>{{ item.documentNumber }}</td>
+            <td>
+              <ion-button color="danger" (click) = "modifica(item)" class="button-small">
+              Vezi
+            </ion-button></td>
+            <!-- Adăugați mai multe coloane aici -->
+          </tr>
+          </ng-container>
+        </tbody>
+      </table>
+
+  <pagination-controls
+
+  (pageChange)="onPageChange($event)"
+    previousLabel="Prev"
+    nextLabel="Next"
+    class="custom-pagination-controls">
+  </pagination-controls>
+
+      </ion-col>
+    </ion-row>
+</ion-grid>
+</ion-content>
+

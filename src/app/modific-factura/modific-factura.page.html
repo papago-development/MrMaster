@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/'" (click)="onBackClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editare Factură</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item>
+      <ion-label><strong>Serie Document:</strong>    {{invoice.documentSerie}}</ion-label>
+
+        <!-- <ion-input  text-right formControlName="documentSerie"></ion-input> -->
+
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label><strong>Număr Document:    </strong>   {{invoice.documentNumber}}</ion-label>
+      <!-- <ion-input formControlName="documentNumber"></ion-input> -->
+    </ion-item>
+
+    <ion-item>
+
+      <ion-label><strong>Data:  </strong>{{ invoice.dataModificarii  }}</ion-label>
+      <!-- <ion-button (click)="openDatePicker()">Alege Data</ion-button> -->
+      <!-- <ion-label>Data Modificării:</ion-label>
+      <ion-datetime formControlName="dataModificarii"></ion-datetime> -->
+    </ion-item>
+
+    <ion-list style="margin-left: 8px; margin-right: 8px;">
+      <ion-grid>
+        <!-- Header-ul tabelului -->
+        <ion-row>
+          <ion-col><strong>Nume Articol</strong></ion-col>
+          <ion-col><strong>Cantitate</strong></ion-col>
+          <ion-col><strong>UM</strong></ion-col>
+          <!-- Adaugă aici altele coloane dacă este necesar -->
+        </ion-row>
+
+        <!-- Iterează prin selectedArticles și afișează fiecare articol ca o linie în tabel -->
+        <ng-container *ngFor="let item of invoice.selectedArticles; let i = index">
+
+            <ion-row>
+              <ion-col>{{ item.numeArticol }}</ion-col>
+              <ion-col>{{ item.cantitate}}</ion-col>
+              <ion-col>{{ item.unitateDeMasura }}</ion-col>
+              <!-- Adaugă aici și altele coloane pentru fiecare articol -->
+            </ion-row>
+
+        </ng-container>
+      </ion-grid>
+    </ion-list>
+
+
+    <!-- <ion-button expand="full" type="submit" [disabled]="!invoiceForm.valid">Salvează</ion-button> -->
+
+</ion-content>
+
+

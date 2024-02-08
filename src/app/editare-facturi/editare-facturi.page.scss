@@ -1,0 +1,88 @@
+/* Stilurile pentru butonul "Next" */
+::ng-deep .custom-pagination-controls .pagination-next a {
+  background-color: blue;
+  color: white;
+}
+
+/* Stilurile pentru butonul "Prev" */
+::ng-deep .custom-pagination-controls .pagination-previous a {
+  background-color: blue;
+  color: white;
+}
+/* Stilurile pentru cifrele paginării */
+
+
+/* Stilurile pentru cifrele paginării */
+::ng-deep .ngx-pagination li a {
+  background-color: rgb(22, 21, 21) !important;
+  color: white !important;
+}
+
+/* Stilurile pentru cifrele paginării atunci când sunt active */
+::ng-deep .ngx-pagination li.active a {
+  background-color: black !important;
+  color: black !important;
+}
+
+.custom-button-action {
+  width: 100%;
+  height: 20px;
+  background-color: brown;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  // justify-content: center;
+  text-align: right;
+  margin-right: 0;
+  margin-top:  20px;
+
+}
+table {
+  width: 100%;
+  border-collapse: collapse; /* Elimină spațiile dintre celulele tabelului */
+}
+/* Stil personalizat pentru butonul mic */
+.button-small {
+  width: 100px; /* Definiți lățimea dorită */
+  height: 30px; /* Definiți înălțimea dorită */
+  font-size: 12px; /* Ajustați mărimea fontului pentru text */
+  padding: 5px 10px; /* Ajustați spațierea interioară pentru conținut */
+}
+
+/* Stil pentru headerul tabelului */
+.table-header {
+  background-color: #3498db; /* Culoarea de fundal pentru header */
+  color: #fff; /* Culoarea textului din header */
+}
+
+/* Stil pentru linii între celule */
+.table td,
+.table th {
+  border-bottom: 0.3px solid #ccc; /* Linii de 0.3 pixeli între celule */
+  padding: 8px; /* Spațierea interioară pentru celule */
+}
+
+.table thead th {
+  background-color: #092032; /* Culoare de fundal pentru header */
+  border: 0.3px solid #e8dddd; /* Bordura de 0.3 pixeli pentru celulele din header */
+  font-weight: bold; /* Font mai îngroșat pentru textul din header */
+}
+.table td {
+  border-right: 0.3px solid #a28989; /* Bordura de 0.3 pixeli între coloane */
+}
+.table tbody td {
+  border: 0.3px solid #d7baba; /* Bordura de 0.3 pixeli pentru celulele din corpul tabelului */
+  padding: 5px; /* Spațiere între text și bordura celulei */
+  text-align: center; /* Aliniere pe mijloc a textului */
+}
+/* Stil pentru celulele din tabel (td) cu text aliniat pe mijloc */
+
+ion-datetime {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+ion-datetime {
+  height: 40px; /* sau orice altă valoare dorită */
+  /* alte stiluri necesare, cum ar fi padding, font-size, etc. */
+}

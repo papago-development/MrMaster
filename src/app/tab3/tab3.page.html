@@ -1,0 +1,102 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+    <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+      <ion-title>Notificari</ion-title>
+  </ion-toolbar>
+  </ion-header>
+
+  <ion-header>
+    <ion-segment [(ngModel)]="selectedSegment">
+      <ion-segment-button value="date-logare">
+        Date Logare
+      </ion-segment-button>
+      <ion-segment-button value="notificari">
+        Notificari
+      </ion-segment-button>
+      <!-- <ion-segment-button value="setari">
+        Setari
+      </ion-segment-button> -->
+    </ion-segment>
+  </ion-header>
+
+  <div *ngIf="selectedSegment === 'date-logare'">
+        <div class="user-info" *ngIf="user">
+          <ion-label>User Curent: {{ user.email }}</ion-label>
+          <div *ngIf="userData$ | async as userData">
+            <div class="user-data">
+              <p>Punct de lucru: {{ userData.punctdelucru }}</p>
+            </div>
+            <!-- Afișați aici alte date din Firestore, folosind userData -->
+          </div>
+
+        </div>
+        <div class="auth-instructions" *ngIf="!user">
+          <p>Pentru a continua, te rugăm să te autentifici.</p>
+          <!-- Afișați instrucțiuni suplimentare sau un buton pentru autentificare aici -->
+        </div>
+        <ion-button style="padding-left: 0px;" expand = "full" (click)="logout()">Deconectare</ion-button>
+  </div>
+
+
+  <div *ngIf="selectedSegment === 'notificari'">
+    <div style="margin-top: 60px; margin-left: 10px; margin-right: 20px;" >
+
+
+    <div class="filter-and-sort">
+      <input
+        type="text"
+        placeholder="Caută..."
+        [(ngModel)]="filterText"
+        (keyup)="filterData()"
+      />
+      <select [(ngModel)]="sortOrder" (change)="sortData()">
+        <option value="asc">Crescător</option>
+        <option value="desc">Descrescător</option>
+      </select>
+    </div>
+
+  <ngx-datatable
+  [rows]="alerts"
+  [columnMode]="'force'"
+  [headerHeight]="30"
+  [footerHeight]="50"
+  [rowHeight]="'auto'"
+  [limit]="10"
+  class="material custom-datatable"
+>
+
+  <!-- Conținutul headerului -->
+
+
+  <ngx-datatable-column name="Articol ID" [width]="30">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.articolId }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Locatie" [width]="30">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.locatie }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Mesaj" [width]="30">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.mesaj }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Timestamp" [width]="30">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.timestamp.toDate() | date: 'medium' }}
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
+</div>
+</div>
+</ion-content>
+

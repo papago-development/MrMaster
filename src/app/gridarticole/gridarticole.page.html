@@ -1,0 +1,82 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/'" (click)="onBackClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title  style="margin-left: -25px;" class="ion-text-center">ALEGETI ARTICOLELE</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="custom-grid">
+    <ng-container *ngIf="icons$ | async as icons">
+      <!-- Iterăm prin date și împărțim datele în rânduri cu câte 4 elemente -->
+      <ng-container *ngFor="let row of icons | chunk: 7">
+
+        <ion-row>
+          <ion-col *ngFor="let icon of row"  size = "3" class="custom-col">
+            <div class="icon-container">
+            <!-- Aici puteți afișa conținutul elementului, cum ar fi o butonieră cu pictogramă -->
+            <ion-button (click) = "openInputDialog(icon.nume)" class="custom-button" style= " border-radius:70px; padding: 0px;">
+              <ion-img [src]="icon.url" ></ion-img>
+            </ion-button>
+            <div class="icon-name">{{icon.nume}}</div>
+            </div>
+          </ion-col>
+
+        </ion-row>
+      </ng-container>
+    </ng-container>
+
+
+    <ion-grid  *ngIf="items && items.length > 0" style="margin-top: 20px;">
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+            <table class="table" >
+              <thead>
+                <tr>
+                  <th>Nr.Crt</th>
+                  <th>Nume Articol</th>
+                  <th>Cantitate</th>
+                  <th>UM</th>
+                  <th>Actiune</th>
+                  <!-- Adăugați mai multe coloane după nevoie -->
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let  item of items">
+                  <td>{{ item.numarCurent }}</td>
+                  <td>{{ item.numeArticol }}</td>
+                  <td>{{ item.cantitate }}</td>
+                  <td>{{ item.unitateMasura }}</td>
+                  <td><ion-button  class="btn" (click) = "sterge(item)" >
+                    <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+                  </ion-button></td>
+                  <!-- Adăugați mai multe coloane aici -->
+                </tr>
+              </tbody>
+            </table>
+          </ion-col>
+      </ion-row>
+
+      <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full"  color="danger"
+       style="margin-top: 20px;"(click)="finalizare()">FINALIZARE</ion-button>
+      </ion-col>
+      </ion-row>
+  </ion-grid>
+
+  <!-- <ion-button class="arrow-button" (click)="next()">
+   Mai departe
+    <ion-icon name="arrow-forward"></ion-icon>
+  </ion-button> -->
+
+
+
+
+
+

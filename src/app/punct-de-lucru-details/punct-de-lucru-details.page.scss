@@ -1,0 +1,15 @@
+.centered-title {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* folosește o valoare diferită dacă nu vrei să fie pe toată înălțimea viewport-ului */
+}
+

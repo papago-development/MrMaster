@@ -1,0 +1,90 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/'" (click)="onBackClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Facturi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid style= "max-width: 100%;">
+    <ion-row>
+      <ion-col size="12">
+          <!-- <ion-label>Data</ion-label> -->
+          <ion-datetime presentation="date"
+            name="date1"
+            style="background-color: rgb(38, 43, 89);"
+            display-format="DD/MM/YYYY"
+            [(ngModel)]="startDate"
+            (ngModelChange)="onDateStartChange()"
+           >
+        </ion-datetime>
+     </ion-col>
+     </ion-row>
+    <ion-row>
+      <ion-col  size="12">
+        <ion-datetime presentation="date"
+           name="date2"
+          style="background-color: rgb(38, 43, 89);"
+          display-format="DD/MM/YYYY"
+          [(ngModel)]="endDate"
+          (ngModelChange)="onDateEndChange()"
+          >
+      </ion-datetime>
+    </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-button  class="custom-button-action" [disabled]="!isActive" expand="full" (click)="afiseazaFacturi()">CAUTA</ion-button>
+    </ion-row>
+    <ion-row style="margin-top: 15px;" *ngIf="pagedData.length > 0" >
+      <ion-col size="12">
+        <table class="table" >
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Serie</th>
+              <th>Numar</th>
+              <th>Actiune</th>
+              <!-- Adăugați mai multe coloane după nevoie -->
+            </tr>
+          </thead>
+        <tbody>
+          <ng-container *ngFor="let  item of pagedData | paginate : {
+            itemsPerPage : itemsPerPage,
+            currentPage: currentPage,
+            totalItems: data.length
+          };" >
+          <tr >
+            <td>{{ item.dataModificarii }}</td>
+            <td>{{ item.documentSerie }}</td>
+            <td>{{ item.documentNumber }}</td>
+            <td>
+              <ion-button expand="full" color="danger"  class= "button-small" (click) = "modifica(item)" >
+                Vezi
+              </ion-button>
+            </td>
+            <!-- Adăugați mai multe coloane aici -->
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+
+
+  <pagination-controls
+
+   (pageChange)="onPageChange($event)"
+  previousLabel="Prev"
+  nextLabel="Next"
+  class="custom-pagination-controls"
+></pagination-controls>
+
+
+
+
+      </ion-col>
+    </ion-row>
+</ion-grid>
+</ion-content>
+

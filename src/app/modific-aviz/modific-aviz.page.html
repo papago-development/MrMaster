@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/'" (click)="onBackClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title >Vizualizare Aviz</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngIf="avizData">
+    <ion-card-header>
+      <ion-card-title> Avizul {{ avizData.documentSerie }} - {{ avizData.documentNumber }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label  class="compact-label"><strong>Serie :</strong></ion-label>
+        <ion-text class="compact-input">{{ avizData.documentSerie }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label  class="compact-label"><strong>Nr Document:</strong></ion-label>
+        <ion-text class="compact-input">{{ avizData.documentNumber }}</ion-text>
+      </ion-item>
+
+      <ion-item>
+        <ion-label  class="compact-label"><strong>Data:</strong></ion-label>
+        <ion-text  class="compact-input">{{ avizData.dataIntrariiView }}</ion-text>
+      </ion-item>
+
+      <ion-list>
+        <ion-grid>
+          <!-- Header Row -->
+          <ion-row class="compact-row">
+            <ion-col><ion-label><strong>Articol</strong></ion-label></ion-col>
+            <ion-col><ion-label><strong>Cantitate</strong></ion-label></ion-col>
+            <ion-col><ion-label><strong>UM</strong></ion-label></ion-col>
+          </ion-row>
+          <!-- Content Rows -->
+          <ion-row class="compact-row" *ngFor="let item of avizData.selectedArticles">
+            <ion-col><ion-label>{{ item.numeArticol }}</ion-label></ion-col>
+            <ion-col><ion-label>{{ item.cantitate }}</ion-label></ion-col>
+            <ion-col><ion-label>{{ item.um }}</ion-label></ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

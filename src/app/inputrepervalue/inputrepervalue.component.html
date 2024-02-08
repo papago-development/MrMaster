@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="uppercase-title">{{ buttonName }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="large-button" (click)="closeDialog()">
+        <ion-icon  class="large-icon" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div class="content-wrapper">
+    <ion-item class="full-width-item">
+      <ion-label position="stacked">Introduceți cantitatea</ion-label>
+      <ion-input color="danger" class="larger-input" type="number" [(ngModel)]="value"></ion-input>
+    </ion-item>
+    <!-- Butonul dvs. ar trebui să fie de asemenea aici, cu clasele necesare pentru a fi pe tot ecranul -->
+    <ion-button expand="full" class="custom-button"  (click)="saveValue(value)">OK</ion-button>
+  </div>
+</ion-content>
+

@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/'" (click)="onBackClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">ALEGETI ARTICOLELE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid class="custom-grid">
+    <ng-container *ngIf="icons$ | async as icons">
+      <!-- Iterăm prin date și împărțim datele în rânduri cu câte 4 elemente -->
+      <ng-container *ngFor="let row of icons | cunkiesiri: 7">
+        <ion-row>
+          <ion-col *ngFor="let icon of row" size = "3"class="custom-col">
+            <!-- Aici puteți afișa conținutul elementului, cum ar fi o butonieră cu pictogramă -->
+            <ion-button (click) = "openInputDialog(icon.nume)" class="custom-button">
+              <ion-img [src]="icon.url" ></ion-img>
+            </ion-button>
+            <div class="icon-name">{{icon.nume}}</div>
+          </ion-col>
+        </ion-row>
+      </ng-container>
+    </ng-container>
+
+    <ion-grid  style="margin-top:30px" *ngIf="items && items.length > 0" >
+      <ion-row>
+        <ion-col size="12" class="ion-text-center">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nr Curent</th>
+                <th>Articol</th>
+                <th>Cantitate</th>
+                <th></th>
+                <!-- Adăugați mai multe coloane după nevoie -->
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let  item of items">
+                <td>{{ item.numarCurent }}</td>
+                <td>{{ item.numeArticol }}</td>
+                <td>{{ item.cantitate }}</td>
+                <td><ion-button   class="btn" (click) = "sterge(item)" >
+                  <ion-icon slot="icon-only" name="trash-outline" ></ion-icon>
+                </ion-button></td>
+                <!-- Adăugați mai multe coloane aici -->
+              </tr>
+            </tbody>
+          </table>
+        </ion-col>
+      </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button expand="full"  color="danger" style="margin-top: 20px;" (click)="finalizareIesiri()">FINALIZARE</ion-button>
+        </ion-col>
+        </ion-row>
+
+
+  </ion-grid>
+</ion-grid>
+</ion-content>
+
+

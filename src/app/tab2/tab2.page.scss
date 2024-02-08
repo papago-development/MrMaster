@@ -1,0 +1,15 @@
+ion-card {
+  margin: 10px;
+}
+
+ion-card img {
+  width: 100%; /* asigurați-vă că imaginea este întinsă pe toată lățimea cardului */
+  height: auto; /* menține aspectul original al imaginii */
+  display: block; /* asigurați-vă că imaginea este tratată ca un element bloc */
+  margin: auto; /* centrează imaginea în card */
+}
+.error-message{
+  margin-left: 10px;
+  margin-top: 30px;
+}
+

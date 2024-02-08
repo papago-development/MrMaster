@@ -1,0 +1,149 @@
+<ion-header [translucent]="true">
+  <ion-toolbar  >
+
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/'" (click)="onBackClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">vanzari{{date}}</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="ion-content-center" class="segment-header">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{date  | date: 'dd-MM-yyyy'}}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button value="stocuri">
+        <ion-label>Situatie zi</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="situatie">
+        <ion-label>Pe zile</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+  <div *ngIf="segment === 'stocuri'" style="margin-top: 30px;">
+    <div class="centered-container">
+      <ion-datetime presentation="date"
+      style="background-color: rgb(38, 43, 89); "
+      display-format="DD/MM/YYYY"
+      [(ngModel)]="date"
+      (ngModelChange)="onDateChange()">
+   </ion-datetime>
+
+    <div class="table-wrapper" style="margin-top: 10px;">
+    <table  class="custom-table">
+      <thead>
+        <tr>
+          <th>Reper</th>
+          <th>Val Vandută</th>
+          <th>Buc. Vândute</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let rezultat of rezultate">
+          <td>{{ rezultat.numeReper }}</td>
+          <td>{{ rezultat.valoareVanduta }} RON</td>
+          <td>{{ rezultat.numarBucatiVandute }} buc.</td>
+        </tr>
+        <br *ngIf="valoareCARD!== undefined">
+
+        <tr *ngIf="valoareCARD!== undefined">
+          <td>CARD</td>
+          <td>{{valoareCARD}} RON</td>
+        </tr>
+        <tr *ngIf="valoareCARD!== undefined">
+          <td>CASH</td>
+          <td>{{valoareCASH}} RON</td>
+        </tr>
+        <tr>
+          <td> Total</td>
+          <td>{{ totalValoareVanduta()}} RON</td>
+          <td style="border: none;">
+            <ion-button (click)="salveazaValori()" *ngIf="valoareCARD !== undefined && valoareCASH !== undefined && dirty">
+              Salvează Valori
+            </ion-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  <p style="margin-left: 20px; color: rgb(248, 0, 12);">{{mesaj}}</p>
+  <ion-button class="custom-button-action" (click)="inputValoareCard(rezultate)" expand="full"
+    *ngIf=" introdu === true ">
+      INTRODU VALOARE CARD
+  </ion-button>
+</div>
+
+<div *ngIf="segment === 'situatie'" style="margin-top: 10px;">
+  <ion-grid style= "max-width: 100%;">
+    <ion-row>
+      <ion-col size="12">
+          <!-- <ion-label>Data</ion-label> -->
+          <ion-datetime presentation="date"
+            name="date1"
+            style="background-color: rgb(38, 43, 89);"
+            display-format="DD/MM/YYYY"
+            [(ngModel)]="startDate"
+            (ngModelChange)="onDateStartChange()"
+           >
+        </ion-datetime>
+     </ion-col>
+     </ion-row>
+    <ion-row>
+      <ion-col  size="12">
+        <ion-datetime presentation="date"
+           name="date2"
+          style="background-color: rgb(38, 43, 89);"
+          display-format="DD/MM/YYYY"
+          [(ngModel)]="endDate"
+          (ngModelChange)="onDateEndChange()"
+          >
+      </ion-datetime>
+    </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-button  class="custom-button-action" [disabled]="!isActive" expand="full" (click)="afiseazaSituatie()">CAUTA</ion-button>
+    </ion-row>
+    </ion-grid>
+    <table  class="custom-table">
+      <tbody>
+        <br *ngIf="valoareCARD!== undefined">
+        <tr >
+          <td>Pahare mici</td>
+          <td>{{pahareMici}} buc. </td>
+        </tr>
+        <tr>
+          <td>Pahare mari</td>
+          <td>{{pahareMari}} buc. </td>
+        </tr>
+        <tr >
+          <td>CARD</td>
+          <td>{{totalCARD}} RON</td>
+        </tr>
+        <tr>
+          <td>CASH</td>
+          <td>{{totalCASH}} RON</td>
+        </tr>
+        <tr>
+          <td>TOTAL</td>
+          <td> {{totalSum}} RON</td>
+
+
+        </tr>
+      </tbody>
+    </table>
+</div>
+  </ion-content>
+
+
+
+

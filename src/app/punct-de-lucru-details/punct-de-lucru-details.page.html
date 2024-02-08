@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="centered-title"> Punct de lucru</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/'" (click)="onBackClicked()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="details" class="center-container"> <!-- asigură-te că detaliile sunt disponibile înainte de a construi view-ul -->
+    <h1>{{ details?.nume }}</h1>
+  </div>
+
+
+    <ion-list style="margin-bottom:20px">
+
+
+    <ion-card (click)="navigateTo('avize', details.numme)" color= "secondary">
+      <ion-card-header>
+        <ion-card-title>Introducere Avize</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Introdu avize pentru punctul de lucru
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="navigateTo('consumuri', details.nume)" color ="tertiary">
+      <ion-card-header>
+        <ion-card-title>Introdu Consumuri</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+          Se introduc consumurile zilnice
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="navigateTo('vanzari', details.nume)" color="primary" >
+      <ion-card-header>
+        <ion-card-title>Vanzari</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+       Aici apare situatia vanzarilor
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="navigateTo('modificari', details.nume)" color ="warning">
+      <ion-card-header>
+        <ion-card-title>Vizualizari Avize</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Aici se pot vedea avizele pe zile
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="navigateTo('situatie', details.nume)"  style="background-color: rgb(11, 128, 89); color: black;">
+      <ion-card-header>
+        <ion-card-title>Situatii</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Jurnale, Stocuri
+   </ion-card-content>
+    </ion-card>
+    <ion-card (click)="navigateTo('setari', details.nume)" color="danger">
+      <ion-card-header>
+        <ion-card-title>Setari</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Situatia reperelor
+   </ion-card-content>
+    </ion-card>
+  </ion-list >
+    <!-- Repetă pentru fiecare secțiune -->
+
+
+
+</ion-content>

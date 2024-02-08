@@ -1,0 +1,174 @@
+.user-info {
+  background-color: #0f0f0f;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 5px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.user-data {
+  margin-top: 10px;
+}
+
+.logout-button {
+  margin-top: 10px;
+  background-color: #ff5733;
+  color: #fff;
+}
+
+.auth-instructions {
+  text-align: center;
+}
+
+
+.filter-and-sort {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.filter-and-sort input[type="text"],
+.filter-and-sort select {
+  width: 48%;
+  padding: 5px;
+  border: 0.5px solid #ddd;
+  border-radius: 5px;
+}
+
+.filter-and-sort select {
+  padding: 7px;
+
+}
+.articolId-column {
+  width: 20%;
+}
+
+.mesaj-column {
+  width: 50%;
+}
+
+.timestamp-column {
+  width: 30%;
+}
+/* Stiluri personalizate pentru ngx-datatable-pager */
+::ng-deep ngx-datatable-pager {
+  background-color: #990a0a; /* Schimbați culoarea de fundal după preferințele dvs. */
+  border: 0.5px solid #ccc; /* Schimbați aspectul bordurii */
+  padding: 10px; /* Ajustați spațiul interior */
+  /* Alte stiluri personalizate aici */
+}
+
+/* Stiluri personalizate pentru headerul tabelului */
+.ion-content-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Spațiere între rânduri */
+}
+
+.custom-button {
+  width: 200px;
+  height: 200px;
+  margin: 10px; /* Spațiere între butoane */
+  font-size: 16px; /* Dimensiunea textului */
+}
+
+/* Add borders between rows */
+::ng-deep .ngx-datatable.material .datatable-row,
+::ng-deep .ngx-datatable.material .datatable-body-row {
+  border-bottom: 0.5px solid #ccc;
+}
+
+/* Add borders between columns */
+::ng-deep .ngx-datatable.material .datatable-body-cell,
+::ng-deep .ngx-datatable.material .datatable-header-cell {
+  border-right: 0.5px solid #ccc;
+  border-left: 0.5px solid #ccc;
+  border-top: 0.5px solid #ccc;
+  text-align: center;
+}
+
+/* Style the header row with a yellow background */
+::ng-deep .ngx-datatable.material .datatable-header {
+  background-color: rgb(3, 69, 126);
+  border-bottom: 0.5px solid #ccc;
+}
+
+/* Remove background color for the last header cell */
+::ng-deep .ngx-datatable.material .datatable-header-cell:last-child {
+  background-color: inherit;
+
+}
+
+
+
+
+
+/* Add spacing between ion-item and ngx-datatable */
+ion-item {
+  margin-bottom: 0.5px; /* Adjust the margin as needed */
+}
+
+
+/* Add borders between rows */
+::ng-deep .ngx-datatable.material .datatable-row,
+::ng-deep .ngx-datatable.material .datatable-body-row {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Add borders between columns */
+::ng-deep .ngx-datatable.material .datatable-body-cell,
+::ng-deep .ngx-datatable.material .datatable-header-cell {
+  border-right: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Style the header row with a yellow background */
+::ng-deep .ngx-datatable.material .datatable-header {
+  background-color: rgb(3, 69, 126);
+  border-bottom: 1px solid #ccc;
+}
+
+/* Remove background color for the last header cell */
+::ng-deep .ngx-datatable.material .datatable-header-cell:last-child {
+  background-color: inherit;
+}
+
+::ng-deep .ngx-datatable.material {
+  display: flex;
+  align-items: center;
+
+}
+
+.center-content {
+  display: flex;
+  justify-content: left; /* centrat orizontal */
+  align-items: left;     /* centrat vertical */
+  height: 100%;            /* ocupă întreaga înălțime a părintelui său */
+}
+
+ion-col {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+

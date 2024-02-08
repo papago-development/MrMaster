@@ -1,0 +1,19 @@
+/* În fișierul de stiluri CSS al paginii (ex: your-page.scss) */
+.content-wrapper {
+  padding: 16px; /* Sau orice altă valoare care se potrivește design-ului dvs. */
+}
+
+.full-width-item {
+  --padding-start: 0;
+  --padding-end: 0;
+  --inner-padding-end: 0;
+  --inner-padding-start: 0;
+  width: 100%; /* Acesta asigură că elementul va ocupa 100% din lățimea părintelui său */
+}
+
+.larger-input {
+  --padding-start: 0;
+  --padding-end: 0;
+  font-size: 1.2em; /* Ajustează mărimea fontului după cum este necesar */
+  height: 50px; /* Înălțimea inputului */
+}

@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="'/'" (click)="onBackClicked()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Stoc Depozit Central</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-grid>
+     <ion-row  class="header-row">
+        <ion-col>Nume Articol</ion-col>
+        <ion-col>Cantitate</ion-col>
+        <ion-col>U.M.</ion-col>
+      </ion-row>
+
+
+
+      <ion-row *ngFor="let article of articles">
+        <ion-col>{{ article.numeArticol }}</ion-col>
+        <ion-col>{{ article.cantitate }}</ion-col>
+        <ion-col>{{ article.unitateMasura }}</ion-col>
+      </ion-row>
+</ion-grid> -->
+<ion-grid style="margin-top: 20px;">
+  <ion-row>
+    <ion-col size="12"  >
+        <!-- <ion-label>Data</ion-label> -->
+        <ion-datetime
+          style="background-color: rgb(38, 43, 89);"
+          display-format="DD/MM/YYYY"
+          [(ngModel)]="selectedD"
+          (ngModelChange)="onDateChange()">
+      </ion-datetime>
+   </ion-col>
+   </ion-row>
+  <!-- <ion-row>
+    <div class="container" style="margin-top: 30px; margin-left: 10px;">
+<ngx-datatable class="material custom-datatable"  [rows]="items | keyvalue">
+  <ngx-datatable-column name="Articol" [width]="100">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.key }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Intrate" [width]="50">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.value.intrari }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Primite" [width]="60">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.value.primite }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Consumate" [width]="90">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.value.consumate }}
+    </ng-template>
+  </ngx-datatable-column>
+  <ngx-datatable-column name="Ramase" [width]="80">
+    <ng-template let-row="row" ngx-datatable-cell-template>
+      {{ row.value.ramase }}
+    </ng-template>
+  </ngx-datatable-column>
+</ngx-datatable>
+<style>
+  ngx-datatable .datatable-header {
+    background-color: #ccc; /* Culoarea gri a fundalului pentru antetul tabelului */
+    border: 1px solid #dbcece; /* O margine neagră în jurul antetului tabelului */
+  }
+</style>
+</div>
+</ion-row> -->
+<ion-row>
+  <table style="margin-top: 10px;">
+    <thead>
+      <tr>
+        <th>Articol</th>
+        <th>Facturi</th>
+        <th>Primite</th>
+        <th>Consumate</th>
+        <th>Ramase</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let key of order">
+        <tr *ngIf="items[key] !== undefined">
+          <td>{{ key }}</td>
+          <td>{{ items[key].intrari }}</td>
+          <td>{{ items[key].primite }}</td>
+          <td>{{ items[key].consumate }}</td>
+          <td>{{ items[key].ramase }}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+</ion-row>
+</ion-grid>
+</ion-content>
+

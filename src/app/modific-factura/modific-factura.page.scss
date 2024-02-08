@@ -1,0 +1,49 @@
+.input-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%; /* Ajustează-l conform necesităților tale */
+}
+/* Stilurile pentru câmpurile dezactivate */
+/* Modificați culoarea textului în câmpurile dezactivate */
+.disabled-input input {
+  color: #fff; /* Schimbați culoarea textului la alb sau alta culoare doriți */
+}
+/* Stilizare pentru ion-item */
+::ng-deep ion-item  {
+  background-color: black; /* Schimbați culoarea de fundal la alb sau culoarea dorită */
+  color: white; /* Schimbați culoarea textului la negru sau culoarea dorită */
+  /* Alte stilizări specifice */
+}
+
+.custom-button-action {
+  width: 100%;
+  height: 20px;
+  background-color: brown;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  // justify-content: center;
+  text-align: right;
+  margin-right: 0;
+  margin-top:  20px;
+
+}
+/* Stiluri pentru a adăuga borduri */
+ion-row {
+  border-bottom: 0.3px solid #ccc; /* Linii orizontale */
+}
+
+ion-col {
+  border-right: 0.3px solid #ccc; /* Linii verticale */
+}
+
+/* Stil pentru a elimina ultimul border dreapta din coloane */
+ion-col:last-child {
+  border-right: none;
+}
+
+ion-row:first-child {
+  background-color: #092032; /* Culoare de fundal pentru header */
+  font-weight: bold; /* Font mai îngroșat pentru textul din header */
+}
